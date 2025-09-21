@@ -374,9 +374,18 @@
           <p>
             Instead of building modality-specific encoders, we represent perturbations as <strong>natural language prompts</strong>. 
             These descriptions capture both cell type and perturbation details (e.g., compounds or CRISPR targets), enabling 
-            a unified representation across diverse perturbation types. We encode prompts with a pretrained BERT model.
+            a unified representation across diverse perturbation types. We encode prompts with a pretrained BERT model. For example
+            to encode the chemical compound butyric acid, a drug affecting cell growth, we use the prompt:
           </p>
-
+          <div class="has-text-centered" style="font-family: monospace; font-style: italic;">
+            A cell painting image of U2OS cells treated with butyric acid, SMILES: CCCC(O)=O.
+          </div>
+          
+          <p>Similarly, for a CRISPR perturbation, the prompt is structured as:</p>
+          
+          <div class="has-text-centered" style="font-family: monospace; font-style: italic;">
+            A cell painting image of U2OS cells treated with CRISPR, targeting genes: AP2S1.
+          </div>
           <h4>Training Objective</h4>
           <p>
             To align image profiles with perturbation text, we combine the standard CLIP loss with a 

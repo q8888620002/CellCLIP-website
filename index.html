@@ -384,7 +384,25 @@
             ensuring that biologically related perturbations remain close in the embedding space while preserving retrieval performance. 
             This objective balances cross-modal alignment with biologically meaningful intra-modal structure.
           </p>
-
+          For the profile-to-perturbation direction, \( \mathcal{U} \rightarrow \mathcal{V} \), our adapted CWCL objective is given by
+          <p style="text-align: center; margin: 1.5rem 0;">
+          \mathcal{L}_{\mathrm{CWCL}, \mathcal{U} \rightarrow \mathcal{V}} =
+          \frac{1}{N} \sum_{i=1}^N 
+          \frac{1}{\sum_{j \in [N]} w_{ij}^{\mathcal{U}}} 
+          \left[ 
+            \sum_{j=1}^N w_{ij}^{\mathcal{U}} \cdot 
+            \log \frac{\exp(\langle p_i \cdot q_i \rangle / \tau )}
+            {\sum_{k=1}^N \exp(\langle p_i \cdot q_k \rangle / \tau )}
+          \right].
+          </p>
+          For the perturbation-to-profile direction, \( \mathcal{V} \rightarrow \mathcal{U} \), we apply the standard CLIP loss. Thus, the final training loss for CellCLIP is 
+          <p style="text-align: center; margin: 1.5rem 0;">
+            \[
+            \mathcal{L}_{\mathrm{total}} = 
+            \mathcal{L}_{\mathrm{CWCL}, \mathcal{U} \rightarrow \mathcal{V}} + 
+            \mathcal{L}_{\mathrm{CLIP}, \mathcal{V} \rightarrow \mathcal{U}}.
+            \]
+          </p>
           <p>
             Together, these design choices allow CellCLIP to leverage powerful pretrained models, efficiently represent 
             high-dimensional Cell Painting data, and generalize across diverse perturbation types.

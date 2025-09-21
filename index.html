@@ -292,10 +292,10 @@
         <div class="content has-text-justified">
           <p>
             High-content screening (HCS) assays based on high-throughput microscopy techniques such as Cell Painting have enabled the interrogation of cells’ morphological responses to perturbations at an unprecedented scale. The collection of such
-data promises to facilitate a better understanding of the relationships between different perturbations and their effects on cellular state. Towards achieving this goal, recent advances in cross-modal contrastive learning could, in theory, be
-leveraged to learn a unified latent space that aligns perturbations with their corresponding morphological effects. However, the application of such methods to HCS data is not straightforward due to substantial differences in the semantics of Cell Painting images compared to natural images, and the difficulty of
-representing different classes of perturbations (e.g. small molecule vs CRISPR gene knockout) in a single latent space. In response to these challenges, here we introduce CellCLIP, a cross-modal contrastive learning framework for HCS data. CellCLIP leverages pre-trained image encoders coupled with a novel channel encoding scheme to better capture relationships between different microscopy
-channels in image embeddings, along with natural language encoders for representing perturbations. Our framework outperforms current open-source models, demonstrating the best performance in both cross-modal retrieval and biologically meaningful downstream tasks while also achieving significant reductions in computation time.
+            data promises to facilitate a better understanding of the relationships between different perturbations and their effects on cellular state. Towards achieving this goal, recent advances in cross-modal contrastive learning could, in theory, be
+            leveraged to learn a unified latent space that aligns perturbations with their corresponding morphological effects. However, the application of such methods to HCS data is not straightforward due to substantial differences in the semantics of Cell Painting images compared to natural images, and the difficulty of
+            representing different classes of perturbations (e.g. small molecule vs CRISPR gene knockout) in a single latent space. In response to these challenges, here we introduce CellCLIP, a cross-modal contrastive learning framework for HCS data. CellCLIP leverages pre-trained image encoders coupled with a novel channel encoding scheme to better capture relationships between different microscopy
+            channels in image embeddings, along with natural language encoders for representing perturbations. Our framework outperforms current open-source models, demonstrating the best performance in both cross-modal retrieval and biologically meaningful downstream tasks while also achieving significant reductions in computation time.
           </p>
         </div>
       </div>
@@ -312,7 +312,7 @@ channels in image embeddings, along with natural language encoders for represent
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/website_fig1.jpg" alt="First research result visualization" loading="lazy" style="width: 70%; height: auto;"/>
+        <img src="static/images/website_fig1.jpg" alt="First research result visualization" style="width: 70%; height: auto;"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
           (a) Cells’ responses to a perturbation are measured by the Cell Painting assay, which captures a set of distinct cellular components in five imaging channels. 
@@ -321,7 +321,7 @@ channels in image embeddings, along with natural language encoders for represent
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/website_fig2.jpg" alt="Second research result visualization" loading="lazy"  style="width: 70%; height: auto;"/>
+        <img src="static/images/website_fig2.jpg" alt="Second research result visualization" style="width: 70%; height: auto;"/>
         <h2 class="subtitle has-text-centered">
           (c) For a perturbation \( i \), CrossChannelFormer takes as input images of all cells receiving perturbation \( i \) and pools them into a single embedding \( p_i \) that takes into account the relationship between information contained in the different Cell Painting channels.
         </h2>
@@ -331,6 +331,53 @@ channels in image embeddings, along with natural language encoders for represent
 </div>
 </section>
 <!-- End image carousel -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce <strong>CellCLIP</strong>, a framework for contrastive learning (CL) on Cell Painting data. 
+            Unlike natural image CL methods, our approach accounts for the unique structure of multi-channel cellular images 
+            and the many-to-one relationship between perturbations and image sets. CellCLIP integrates three key components:
+          </p>
+
+          <h4>CrossChannelFormer</h4>
+          <p>
+            To encode images, we adapt pretrained natural image models (e.g., DINOv2) by treating each Cell Painting channel as a 
+            grayscale input. We then aggregate images from the same perturbation using gated attention pooling, producing a 
+            per-perturbation profile. Finally, our <strong>CrossChannelFormer</strong> introduces lightweight cross-channel reasoning 
+            by combining pooled profiles with channel-specific embeddings and a global CLS token. This design enables efficient 
+            modeling of stain-specific structures while requiring only <em>C+1</em> tokens per perturbation.
+          </p>
+
+          <h4>Perturbation Encoding</h4>
+          <p>
+            Instead of building modality-specific encoders, we represent perturbations as <strong>natural language prompts</strong>. 
+            These descriptions capture both cell type and perturbation details (e.g., compounds or CRISPR targets), enabling 
+            a unified representation across diverse perturbation types. We encode prompts with a pretrained BERT model.
+          </p>
+
+          <h4>Training Objective</h4>
+          <p>
+            To align image profiles with perturbation text, we combine the standard CLIP loss with a 
+            <strong>Continuously Weighted Contrastive Loss (CWCL)</strong>. CWCL softly reweights pairs based on morphological similarity, 
+            ensuring that biologically related perturbations remain close in the embedding space while preserving retrieval performance. 
+            This objective balances cross-modal alignment with biologically meaningful intra-modal structure.
+          </p>
+
+          <p>
+            Together, these design choices allow CellCLIP to leverage powerful pretrained models, efficiently represent 
+            high-dimensional Cell Painting data, and generalize across diverse perturbation types.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 

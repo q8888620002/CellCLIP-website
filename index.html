@@ -434,7 +434,6 @@
           <p>
           We next investigated the impact of CrossChannelFormer's ability to reason across global Cell Painting channel information. To do so, we replaced CLOOME's ResNet image encoder with our CrossChannelFormer encoder. To isolate the effects of CrossChannelFormer's ability to reason across channels from the effects of per-perturbation pooling, in this experiment we removed the CrossChannelFormer's pooling function and trained the resulting model (denoted as CrossChannelFormer\(^{\dagger}\) in \Cref{tab:retrieval_main}) on individual image-perturbation pairs.
             We found that this change led to an additional increase in model performance. To understand how our approach compared to previous channel-aware vision encoding approaches, we ran this same experiment using a channel agnostic MAE (CA-MAE) and ViT (ChannelViT) as vision encoders. We found that CrossChannelFormer consistently outperformed these baselines on both tasks. This demonstrates that image embeddings extracted from models pretrained on natural images can be effectively leveraged with CrossChannelFormer. Additionally, our approach substantially reduced training time, achieving a 3.9 times speedup compared to CLOOME and a 2.2 times speedup compared to other channel-agnostic methods. This efficiency stems from CrossChannelFormer operating in a compact feature space and requiring only \(C+1\) tokens per instance. 
-\vspace{-0.7em}
           </p>
 
           <h4>

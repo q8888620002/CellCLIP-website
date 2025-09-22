@@ -16,23 +16,19 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
+  <meta property="og:site_name" content="UW AIMS">
   <!-- TODO: Same as paper title above -->
   <meta property="og:title" content="CellCLIP – Learning Perturbation Effects in Cell Painting via Text-Guided Contrastive Learning">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta property="og:description" content="High-content screening (HCS) assays based on high-throughput microscopy techniques such as Cell Painting have enabled the interrogation of cells’ morphological responses to perturbations at an unprecedented scale. The collection of such data promises to facilitate a better understanding of the relationships between different perturbations and their effects on cellular state. Towards achieving this goal, recent advances in cross-modal contrastive learning could, in theory, be leveraged to learn a unified latent space that aligns perturbations with their corresponding morphological effects. However, the application of such methods to HCS data is not straightforward due to substantial differences in the semantics of Cell Painting images compared to natural images, and the difficulty of representing different classes of perturbations (e.g. small molecule vs CRISPR gene knockout) in a single latent space. In response to these challenges, here we introduce CellCLIP, a cross-modal contrastive learning framework for HCS data. CellCLIP leverages pre-trained image encoders coupled with a novel channel encoding scheme to better capture relationships between different microscopy channels in image embeddings, along with natural language encoders for representing perturbations. Our framework outperforms current open-source models, demonstrating the best performance in both cross-modal retrieval and biologically meaningful downstream tasks while also achieving significant reductions in computation time.">
   <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <meta property="og:url" content="https://q8888620002.github.io/CellCLIP-website/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:published_time" content="2025-09-21T00:00:00.000Z">
+  <meta property="article:author" content="Mingyu Lu">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="Cell Painting">
+  <meta property="article:tag" content="Contrastive Learning">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -70,7 +66,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <title>CellCLIP - Mingyu Lu, Ethan Weinberger, Chanwoo Kim, Su-In Lee | University of Washigton</title>
+  <title>CellCLIP - Mingyu Lu, Ethan Weinberger, Chanwoo Kim, Su-In Lee | University of Washington </title>
   
   <!-- Favicon and App Icons -->
 <!--   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -182,54 +178,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-<!--   <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div> -->
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
@@ -273,6 +221,17 @@
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                  <a href="https://huggingface.co/suinleelab/CellCLIP" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
+                         alt="Hugging Face" 
+                         style="width:1em; height:1em;">
+                  </span>
+                  <span>Huggingface checkpoint</span>
                 </a>
               </span>
             </div>
@@ -439,12 +398,6 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
-          <p>
-          <h4>Cross-modality retrieval</h4>
-          We present our results for cross-modality retrieval tasks (i.e., perturbation-to-profile and profile-to-perturbation) in Table 1. For our benchmarking we compared CellCLIP against previous state-of-the-art CL methods for Cell Painting perturbation screens: CLOOME and MolPhenix. 
-            For CLOOME we used the same architecture with optimal hyperparameters as specified in Sanchez-Fernandez et al., along with subsequent variations of the model described in Fradkin et al..
-          Because Fradkin et al.’s implementation of MolPhenix relied on closed-source components trained on non-public datasets, compared against an approximation of their framework which we designate as MolPhenix*
-          </p>
          <div class="content has-text-centered" style="margin-top: 2rem;">
           <img src="static/images/result0.jpg" style="width: 100%; height: auto;" />
           <p class="is-size-10" style="margin-top: 1rem;">
@@ -453,8 +406,46 @@
             </em>
           </p>
         </div>
-        
-    
+          <p>
+          <h4>Cross-modality retrieval</h4>
+          We present our results for cross-modality retrieval tasks (i.e., perturbation-to-profile and profile-to-perturbation) in Table 1. For our benchmarking we compared CellCLIP against previous state-of-the-art CL methods for Cell Painting perturbation screens: CLOOME and MolPhenix. 
+          Overall, we found that CellCLIP demonstrated substantially higher performance at both cross-modal retrieval tasks compared to baseline methods. 
+            To understand the source of performance gains in CellCLIP, we conducted a series of ablations to understand the contribution of each component in CellCLIP to retrieval performance. 
+            Specifically, starting with CLOOME's proposed encoding scheme, where individual images encoded using ResNet50 are aligned with chemical perturbations encoded using Morgan fingerprints combined with an MLP, we gradually replaced each of CLOOME's components with those of CellCLIP and assessed each change's impact on model performance.
+          </p>
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/result3.jpg" style="width: 100%; height: auto;" />
+            <p class="is-size-10" style="margin-top: 1rem;">
+              <em>
+            Ablation studies of various vision and perturbation encoder combinations and retrieval performance in Bray et al 2016. We report mean Recall@1, @5, and @10 $\pm$ standard deviation across random seeds for perturbation-to-profile and profile-to-perturbation retrieval tasks.  \(\triangle\) indicates Morgan Fingerprint; \(\Box\) indicates text prompt.
+              </em>
+            </p>
+          </div>
+        <h4>
+        Language can effectively represent perturbations.
+        </h4>
+         <p>
+        We began by replacing CLOOME's chemical structure encoder, which feeds chemicals' Morgan fingerprints through a multi-layer perceptrion (MLP), with the natural language encoder used in CellCLIP while holding all other model components fixed. We found that this change alone yielded significant performance gains for both retrieval tasks. Notably, we found this result continued to hold even after replacing the generic MLP used in CLOOME with an MPNN++ network designed specifically for molecular property prediction
+         </p>
+
+        <h4>
+        Cross-channel reasoning improves retrieval performance
+        </h4>
+          <p>
+          We next investigated the impact of CrossChannelFormer's ability to reason across global Cell Painting channel information. To do so, we replaced CLOOME's ResNet image encoder with our CrossChannelFormer encoder. To isolate the effects of CrossChannelFormer's ability to reason across channels from the effects of per-perturbation pooling, in this experiment we removed the CrossChannelFormer's pooling function and trained the resulting model (denoted as CrossChannelFormer\(^{\dagger}\) in \Cref{tab:retrieval_main}) on individual image-perturbation pairs.
+            We found that this change led to an additional increase in model performance. To understand how our approach compared to previous channel-aware vision encoding approaches, we ran this same experiment using a channel agnostic MAE (CA-MAE) and ViT (ChannelViT) as vision encoders. We found that CrossChannelFormer consistently outperformed these baselines on both tasks. This demonstrates that image embeddings extracted from models pretrained on natural images can be effectively leveraged with CrossChannelFormer. Additionally, our approach substantially reduced training time, achieving a 3.9 times speedup compared to CLOOME and a 2.2 times speedup compared to other channel-agnostic methods. This efficiency stems from CrossChannelFormer operating in a compact feature space and requiring only \(C+1\) tokens per instance. 
+\vspace{-0.7em}
+          </p>
+
+          <h4>
+          Pooling yields improved alignment and computational efficiency
+          </h4>          
+          <p>
+          Finally, we evaluated the impact of the attention-based pooling operator within CrossChannelFormer compared to instance-level training (i.e., no pooling). We found that including pooling resulted in yet another increase in model performance. In addition, by reducing the number of pairs for contrastive loss computation, pooling yielding a 6.7 times speedup in training time relative to instance-level training. We also explored the impact of varying our choice of pooling operator (\Cref{subsec:pooling_comparison}), and found that attention-based pooling yielded the best results among the pooling operators we considered.
+          </p>
+          <p>
+          Overall, our results demonstrate that each of our main design choices in CellCLIP contributes to improved retrieval performance and computational efficiency compared to prior work.
+          </p>
           <h4>Recovering known biological relationships</h4>
           <p>
            We report recall of known biological relationships among genetic perturbations in RxRx3-core. Across all benchmark databases, we found that CellCLIP achieved the best recovery of known gene-gene relationships compared to baseline models. Notably, we found that replacing the CWCL loss used in CellCLIP with the standard CLIP loss leads to worse performance on this task, illustrating the benefits of using soft labeling for alignment in the image profile space \( \mathcal{P} \). Altogether, these results further demonstrate that CellCLIP can recover meaningful relationships between perturbations in its image profile latent space.

@@ -432,22 +432,25 @@
         Cross-channel reasoning improves retrieval performance
         </h4>
           <p>
-          We next investigated the impact of CrossChannelFormer's ability to reason across global Cell Painting channel information. To do so, we replaced CLOOME's ResNet image encoder with our CrossChannelFormer encoder. To isolate the effects of CrossChannelFormer's ability to reason across channels from the effects of per-perturbation pooling, in this experiment we removed the CrossChannelFormer's pooling function and trained the resulting model (denoted as CrossChannelFormer\(^{\dagger}\) in \Cref{tab:retrieval_main}) on individual image-perturbation pairs.
+          We next investigated the impact of CrossChannelFormer's ability to reason across global Cell Painting channel information. To do so, we replaced CLOOME's ResNet image encoder with our CrossChannelFormer encoder. To isolate the effects of CrossChannelFormer's ability to reason across channels from the effects of per-perturbation pooling, in this experiment we removed the CrossChannelFormer's pooling function and trained the resulting model (denoted as CrossChannelFormer\(^{\dagger}\) in Table above) on individual image-perturbation pairs.
             We found that this change led to an additional increase in model performance. To understand how our approach compared to previous channel-aware vision encoding approaches, we ran this same experiment using a channel agnostic MAE (CA-MAE) and ViT (ChannelViT) as vision encoders. We found that CrossChannelFormer consistently outperformed these baselines on both tasks. This demonstrates that image embeddings extracted from models pretrained on natural images can be effectively leveraged with CrossChannelFormer. Additionally, our approach substantially reduced training time, achieving a 3.9 times speedup compared to CLOOME and a 2.2 times speedup compared to other channel-agnostic methods. This efficiency stems from CrossChannelFormer operating in a compact feature space and requiring only \(C+1\) tokens per instance. 
           </p>
-
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/result4.jpg" style="width: 100%; height: auto;" />
+            <p class="is-size-10" style="margin-top: 1rem;">
+              <em>
+              Retrieval performance of CellCLIP trained across different pooling strategies on perturb-to-profile and profile-to-perturb tasks.
+              </em>
+            </p>
+          </div>
           <h4>
           Pooling yields improved alignment and computational efficiency
           </h4>          
           <p>
-          Finally, we evaluated the impact of the attention-based pooling operator within CrossChannelFormer compared to instance-level training (i.e., no pooling). We found that including pooling resulted in yet another increase in model performance. In addition, by reducing the number of pairs for contrastive loss computation, pooling yielding a 6.7 times speedup in training time relative to instance-level training. We also explored the impact of varying our choice of pooling operator (\Cref{subsec:pooling_comparison}), and found that attention-based pooling yielded the best results among the pooling operators we considered.
+          Finally, we evaluated the impact of the attention-based pooling operator within CrossChannelFormer compared to instance-level training (i.e., no pooling). We found that including pooling resulted in yet another increase in model performance. In addition, by reducing the number of pairs for contrastive loss computation, pooling yielding a 6.7 times speedup in training time relative to instance-level training. We also explored the impact of varying our choice of pooling operator, and found that attention-based pooling yielded the best results among the pooling operators we considered.
           </p>
           <p>
           Overall, our results demonstrate that each of our main design choices in CellCLIP contributes to improved retrieval performance and computational efficiency compared to prior work.
-          </p>
-          <h4>Recovering known biological relationships</h4>
-          <p>
-           We report recall of known biological relationships among genetic perturbations in RxRx3-core. Across all benchmark databases, we found that CellCLIP achieved the best recovery of known gene-gene relationships compared to baseline models. Notably, we found that replacing the CWCL loss used in CellCLIP with the standard CLIP loss leads to worse performance on this task, illustrating the benefits of using soft labeling for alignment in the image profile space \( \mathcal{P} \). Altogether, these results further demonstrate that CellCLIP can recover meaningful relationships between perturbations in its image profile latent space.
           </p>
           <div class="content has-text-centered" style="margin-top: 2rem;">
             <img src="static/images/result2.jpg" style="width: 100%; height: auto;" />
@@ -457,6 +460,11 @@
               </em>
             </p>
           </div>
+          <h4>Recovering known biological relationships</h4>
+          <p>
+           We report recall of known biological relationships among genetic perturbations in RxRx3-core. Across all benchmark databases, we found that CellCLIP achieved the best recovery of known gene-gene relationships compared to baseline models. Notably, we found that replacing the CWCL loss used in CellCLIP with the standard CLIP loss leads to worse performance on this task, illustrating the benefits of using soft labeling for alignment in the image profile space \( \mathcal{P} \). Altogether, these results further demonstrate that CellCLIP can recover meaningful relationships between perturbations in its image profile latent space.
+          </p>
+          
         </div>
       </div>
     </div>

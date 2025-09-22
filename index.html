@@ -366,6 +366,9 @@
               \right].
             \]
           </p>
+          <p>
+          Here $p_i$ represents the output of CrossChannelFormer applied to images corresponding to perturbation $i$, $q_i$ corresponds to our encoding of the natural language description of perturbation $i$, and  \(w_{ij}^{\mathcal{U}}\) denotes the similarity between the pooled profiles \(\pooling(U_i)\) and \(\pooling(U_j)\), used to reweight the alignment from modality \(\mathcal{U}\) to modality \(\mathcal{V}\)
+          </p>
           For the perturbation-to-profile direction, \( \mathcal{V} \rightarrow \mathcal{U} \), we apply the standard CLIP loss. Thus, the final training loss for CellCLIP is 
           <p style="text-align: center; margin: 1.5rem 0;">
             \[

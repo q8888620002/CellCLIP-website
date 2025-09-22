@@ -433,6 +433,51 @@
 </section>
 
 
+  <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+          <h4>Cross-modality retrieval</h4>
+            We present our results for cross-modality retrieval tasks (i.e., perturbation-to-profile and profile-to-
+          perturbation) in Table 1. For our benchmarking we compared CellCLIP against previous state-of-
+          the-art CL methods for Cell Painting perturbation screens: CLOOME [37] and MolPhenix [ 16]. For
+          CLOOME we used the same architecture with optimal hyperparameters as specified in Sanchez-
+          Fernandez et al. [37], along with subsequent variations of the model described in Fradkin et al. [16].
+          Because Fradkin et al. [16] ’s implementation of MolPhenix relied on closed-source components
+          trained on non-public datasets, compared against an approximation of their framework which we
+          designate as MolPhenix*
+          </p>
+         <div class="content has-text-centered" style="margin-top: 2rem;">
+          <img src="static/images/results0.jpg" style="width: 100%; height: auto;" />
+          <p class="is-size-10" style="margin-top: 1rem;">
+            <em>
+            Benchmarking CellCLIP and baseline methods on perturbation-to-profile and profile-to-perturbation retrieval performance for unseen molecules from \citet{bray2016cell}. We report mean Recall@1, @5, and @10 $\pm$ standard deviation across random seeds for both tasks. Higher recall corresponds to better performance. Best results are shown in \textbf{bold}.
+            </em>
+          </p>
+        </div>
+        
+    
+          <h4>Recovering known biological relationships</h4>
+          <p>
+            reports recall of known biological relationships among genetic perturbations in RxRx3-core. Across all benchmark databases, we found that CellCLIP achieved the best recovery of known gene-gene relationships compared to baseline models. Notably, we found that replacing the CWCL loss used in CellCLIP with the standard CLIP loss leads to worse performance on this task (\Cref{tab:appendix:losses_zero_shot_recovery}), illustrating the benefits of using soft labeling for alignment in the image profile space $\mathcal{P}$. Altogether, these results further demonstrate that CellCLIP can recover meaningful relationships between perturbations in its image profile latent space.
+          </p>
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/result2.jpg" style="width: 100%; height: auto;" />
+            <p class="is-size-10" style="margin-top: 1rem;">
+              <em>
+              Zero-shot gene–gene relationship recovery on RxRx3-core, evaluated across varying thresholds from Recall@2\% [0.01,0.99] (top and bottom 1\%) to Recall@20\% [0.10,0.90] (top and bottom 10\%), using pathway annotations from CORUM, HuMAP, Reactome, SIGNOR, and STRING.
+              </em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
 
 
 <!--BibTex citation -->
